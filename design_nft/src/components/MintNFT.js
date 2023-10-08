@@ -15,6 +15,9 @@ const MintNFT = () => {
   const handleHome = () => {
     navigate('/', { state: { selectedImage, userAddress } });
   }
+  const handlePhy = () => {
+    navigate('/phygitalize', { state: { selectedImage }});
+  }
 
   return (
     
@@ -35,6 +38,7 @@ const MintNFT = () => {
           </div>
           <div className='flex space-x-4'>
             <button 
+                onClick={handlePhy}
               className="bg-green-500 flex text-white px-4 py-2 rounded">
               Phygitalize
             </button>

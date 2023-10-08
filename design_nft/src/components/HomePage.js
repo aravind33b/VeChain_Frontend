@@ -64,7 +64,7 @@ const Homepage = () =>{
                             <span className="text-gray-800">{userAddress}</span>
                             <button
                                 onClick={disconnectWallet}
-                                className="bg-red-500 text-white py-2 px-4 rounded-lg hover:bg-red-600 transition duration-300"
+                                className="bg-gray-700 text-white py-2 px-4 rounded-lg hover:bg-red-600 transition duration-300"
                             >
                                 Log Out
                             </button>
@@ -72,7 +72,7 @@ const Homepage = () =>{
                     ) : (
                         <button
                             onClick={connectWallet}
-                            className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300"
+                            className="bg-gray-500 text-white py-2 px-4 rounded-lg hover:bg-gray-500 transition duration-300"
                         >
                             Connect Wallet
                         </button>
