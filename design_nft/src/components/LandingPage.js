@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import ImageUpload from './ImageUpload';
 import { useNavigate } from 'react-router-dom';
 import '@material-tailwind/react';
+import { WalletContext } from './WalletContext';
 
 const LandingPage = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const navigate = useNavigate(); 
+
+  const { userAddress } = useContext(WalletContext);
 
   const handleImageSelect = (e) => {
     const file = e.target.files[0];
@@ -17,7 +20,8 @@ const LandingPage = () => {
   };
 
   const handleMintNFT = () => {
-    navigate('/mint-nft', { state: { selectedImage } });  
+    console.log(userAddress)
+    navigate('/mint-nft', { state: { selectedImage, userAddress } }); 
   };
 
   return (

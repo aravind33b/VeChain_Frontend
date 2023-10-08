@@ -5,9 +5,15 @@ const MintNFT = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const selectedImage = location.state?.selectedImage;
+  const userAddress = location.state?.userAddress;
+  const today = new Date();
+  const month = today.getMonth()+1;
+  const year = today.getFullYear();
+  const date = today. getDate();
+  const currentDate = month + "/" + date + "/" + year;
 
   const handleHome = () => {
-    navigate('/');
+    navigate('/', { state: { selectedImage, userAddress } });
   }
 
   return (
@@ -24,19 +30,21 @@ const MintNFT = () => {
           />
           <div className="bg-white p-8 shadow-md rounded-md max-w-md mb-4">
             <h2 className="text-2xl font-bold mb-4">Owner Details</h2>
-            <p>Name: John Doe</p>
-            <p>Email: john@example.com</p>
+            <p>Address: {userAddress}</p>
+            <p>Date of Mint: {currentDate}</p>
           </div>
-          <button 
-            className="bg-green-500 flex text-white px-4 py-2 rounded">
-            Phygitalize
-          </button>
-          <button
-          onClick={handleHome}
-          className="bg-gray-500 text-black px-4 py-2 rounded"
-        >
-          Close
-          </button>
+          <div className='flex space-x-4'>
+            <button 
+              className="bg-green-500 flex text-white px-4 py-2 rounded">
+              Phygitalize
+            </button>
+            <button
+            onClick={handleHome}
+            className="bg-gray-500 text-black px-4 py-2 rounded"
+          >
+            Close
+            </button>
+          </div>
         </>
       )}
     </div>
