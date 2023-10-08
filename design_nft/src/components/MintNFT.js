@@ -1,5 +1,7 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import ABI from '../ABI.json'
+import Connex from '@vechain/connex';
 
 const MintNFT = () => {
   const location = useLocation();
@@ -12,12 +14,16 @@ const MintNFT = () => {
   const date = today. getDate();
   const currentDate = month + "/" + date + "/" + year;
 
+  console.log(userAddress);
   const handleHome = () => {
     navigate('/', { state: { selectedImage, userAddress } });
   }
   const handlePhy = () => {
     navigate('/phygitalize', { state: { selectedImage }});
   }
+
+  
+
 
   return (
     

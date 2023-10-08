@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SupplyChainTable = ({ items }) => {
+const upplyChainTable = ({ items }) => {
   return (
     <div className="overflow-x-auto text-center">
       <table className="min-w-full bg-white mx-auto">
@@ -29,4 +29,4 @@ const SupplyChainTable = ({ items }) => {
   );
 };
 
-export default SupplyChainTable;
+export default upplyChainTable;
